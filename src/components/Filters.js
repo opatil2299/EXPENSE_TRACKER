@@ -1,7 +1,7 @@
 import { Group, Select } from "@mantine/core";
 // import { valueGetters } from "@mantine/core/lib/Box/style-system-props/value-getters/value-getters";
-import React, { useEffect } from "react";
-import { DatePicker, DatePickerInput } from "@mantine/dates";
+// import React, { useEffect } from "react";
+import { DatePickerInput } from "@mantine/dates";
 // import { DateRangePicker } from "@mantine/dates";
 function Filters({ setFilters, filters }) {
   return (

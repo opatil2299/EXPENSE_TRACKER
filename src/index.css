@@ -73,9 +73,9 @@ input {
   overflow-y: scroll !important;
 }
 
-/* .mantine-othpma {
+.mantine-othpma {
   height: 100% !important;
-} */
+}
 .auth {
   background-color: #128886;
 }
