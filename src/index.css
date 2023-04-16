@@ -12,6 +12,9 @@ code {
     monospace;
 }
 
+/* html {
+  /* overflow: scroll !important; */
+/* } */
 .h-screen {
   height: 100vh;
 }
@@ -69,13 +72,21 @@ input {
 }
 
 .container {
+  /* height: 100% !important; */
   height: 85vh !important;
-  overflow-y: scroll !important;
+  /* overflow-y: scroll !important; */
 }
 
+/* .mantine-Group-root {
+  height: 100% !important;
+} */
 .mantine-othpma {
   height: 100% !important;
+  overflow-y: scroll;
 }
 .auth {
   background-color: #128886;
 }
+/* .mantine-Popover-dropdown {
+  height: 100% !important;
+} */

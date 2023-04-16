@@ -13,11 +13,14 @@ function Analytics({ transactions }) {
   const totalExpenseTransactions = transactions.filter(
     (transaction) => transaction.type === "expense"
   ).length;
-  const totalIncomeTransactionsPercentage =
+  var totalIncomeTransactionsPercentage =
     (totalIncomeTransactions / totalTransactions) * 100;
-  const totalExpenseTransactionsPercentage =
+  if (isNaN(totalIncomeTransactionsPercentage))
+    totalIncomeTransactionsPercentage = 0;
+  var totalExpenseTransactionsPercentage =
     (totalExpenseTransactions / totalTransactions) * 100;
-
+  if (isNaN(totalExpenseTransactionsPercentage))
+    totalExpenseTransactionsPercentage = 0;
   //total ampount
   const totalAmount = transactions.reduce((acc, transaction) => {
     return acc + Number(transaction.amount);
@@ -32,9 +35,10 @@ function Analytics({ transactions }) {
     .reduce((acc, transaction) => {
       return acc + Number(transaction.amount);
     }, 0);
-  const totalIncomeAmountPercentage = (totalIncomeAmount / totalAmount) * 100;
-  const totalExpenseAmountPercentage = (totalExpenseAmount / totalAmount) * 100;
-
+  var totalIncomeAmountPercentage = (totalIncomeAmount / totalAmount) * 100;
+  if (isNaN(totalIncomeAmountPercentage)) totalIncomeAmountPercentage = 0;
+  var totalExpenseAmountPercentage = (totalExpenseAmount / totalAmount) * 100;
+  if (isNaN(totalExpenseAmountPercentage)) totalExpenseAmountPercentage = 0;
   const categories = [
     { value: "food", label: "Food" },
     { value: "transport", label: "Transport" },
@@ -54,7 +58,7 @@ function Analytics({ transactions }) {
           <h1 className="card-title">Total Transactions:{totalTransactions}</h1>
           <Divider my={20} />
           <p>Income Transactions : {totalIncomeTransactions}</p>
-          <p>Expense Transactions : {totalExpenseTransactions}</p>{" "}
+          <p>Expense Transactions : {totalExpenseTransactions}</p>
           <Group>
             <RingProgress
               label={
@@ -147,8 +151,10 @@ function Analytics({ transactions }) {
               .reduce((acc, transaction) => {
                 return acc + Number(transaction.amount);
               }, 0);
-            const incomeCategorytransactionsPercentage =
+            var incomeCategorytransactionsPercentage =
               (incomeCategorytransactionsAmount / totalIncomeAmount) * 100;
+            if (isNaN(incomeCategorytransactionsPercentage))
+              incomeCategorytransactionsPercentage = 0;
             return (
               <div>
                 <p>{category.label}</p>
@@ -175,8 +181,10 @@ function Analytics({ transactions }) {
               .reduce((acc, transaction) => {
                 return acc + Number(transaction.amount);
               }, 0);
-            const expenseCategorytransactionsPercentage =
+            var expenseCategorytransactionsPercentage =
               (expenseCategorytransactionsAmount / totalExpenseAmount) * 100;
+            if (isNaN(expenseCategorytransactionsPercentage))
+              expenseCategorytransactionsPercentage = 0;
             return (
               <div>
                 <p>{category.label}</p>

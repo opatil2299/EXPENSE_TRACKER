@@ -23,6 +23,7 @@ function Filters({ setFilters, filters }) {
       {filters.frequency === "custom-range" && (
         <DatePickerInput
           sx={{ width: "350px" }}
+          tabIndex={9999}
           label="Select Date Range"
           // dropdownType="modal"
           type="range"
