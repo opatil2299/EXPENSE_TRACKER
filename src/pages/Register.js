@@ -43,7 +43,6 @@ function Register() {
           title: "User already exist",
           color: "red",
         });
-        return;
       } else {
         //encrypt password
         const encryptPassword = cryptojs.AES.encrypt(
